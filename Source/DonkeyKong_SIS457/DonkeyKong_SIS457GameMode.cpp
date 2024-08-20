@@ -3,6 +3,10 @@
 #include "DonkeyKong_SIS457GameMode.h"
 #include "DonkeyKong_SIS457Character.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Pared.h"
+#include "Roca.h"
+#include "Obstaculo.h"
+
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
@@ -20,7 +24,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 
 	//spawneamos nuestro enemigo
-	enemigo = GetWorld()->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), FVector(500.0f, 500.0f, 250.0f), FRotator::ZeroRotator);
+	enemigo = GetWorld()->SpawnActor<AEnemigo>(AEnemigo::StaticClass(), FVector(500.0f, -700.0f, 250.0f), FRotator::ZeroRotator);
 	enemigo->Atacar();
 	enemigo->Mover();
 	enemigo->Escapar();
@@ -38,10 +42,29 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 		enemigo = World->SpawnActor<AEnemigo>(ubicacionInicial, rotacionEnemigo);
 	}*/
+
+
+	//Spawnamos nuestro obstaculo
+	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("Actor Spawning"));
+	// Spawn an instance of the AMyFirstActor class at the
+	//default location.
+	FTransform SpawnLocation;
+	SpawnLocation.SetLocation(FVector(1160.0f, -210.0f, 140.0f));
+	SpawnLocation.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));		
+	GetWorld()->SpawnActor<AObstaculo>(AObstaculo::StaticClass(), SpawnLocation);
+
+
+	
+	//Spawneamos nuestra pared
+	GetWorld()->SpawnActor<APared>(APared::StaticClass(), FVector(1206.0f, 205.0f, 250.0f), FRotator::ZeroRotator);
+
+	//Spawneamos nuestra roca
+	GetWorld()->SpawnActor<ARoca>(ARoca::StaticClass(), FVector(1180.0f, -500.0f, 100.0f), FRotator::ZeroRotator);
 }
 
 void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
 
 }

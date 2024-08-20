@@ -85,5 +85,12 @@ public:
 	void Mover();
 	void Escapar();
 	void Destruirse();
+
+protected:
+	bool movimientoDerecha;
+	FVector posicionInicial;
+	FVector posicionActual;
+	FVector posicionFinal;
+	float incrementoY;
 	
 };

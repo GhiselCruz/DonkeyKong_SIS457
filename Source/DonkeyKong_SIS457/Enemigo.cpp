@@ -22,6 +22,7 @@ AEnemigo::AEnemigo()
 	RootComponent = mallaEnemigo;
 
 
+
 }
 
 // Called when the game starts or when spawned
@@ -29,6 +30,12 @@ void AEnemigo::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	posicionActual = FVector(0.0f, 0.0f, 0.0f);
+	posicionActual = GetActorLocation();
+	posicionInicial = posicionActual;
+	posicionFinal = posicionActual + FVector(0.0f, 1000.0f, 0.0f);
+	incrementoY = 10.0f;
+	movimientoDerecha = false;
 }
 
 // Called every frame
@@ -36,6 +43,28 @@ void AEnemigo::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (!movimientoDerecha)
+	{
+		if (posicionActual.Y < posicionFinal.Y)
+		{
+			posicionActual.Y += incrementoY;
+		}
+		else
+		{
+			movimientoDerecha = true;
+		}
+	}
+	else
+	{
+		if (posicionActual.Y > posicionInicial.Y)
+		{
+			posicionActual.Y -= incrementoY;
+		}
+		else {
+			movimientoDerecha = false;
+		}
+	}
+	SetActorLocation(posicionActual);
 }
 
 void AEnemigo::Atacar()

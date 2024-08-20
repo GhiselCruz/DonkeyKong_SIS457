@@ -38,7 +38,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	GetCharacterMovement()->AirControl = 0.80f;
 	GetCharacterMovement()->JumpZVelocity = 1000.f;
 	GetCharacterMovement()->GroundFriction = 3.f;
-	GetCharacterMovement()->MaxWalkSpeed = 600.f;
+	GetCharacterMovement()->MaxWalkSpeed = 900.f;  //valor por defecto 600
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
@@ -64,6 +64,11 @@ void ADonkeyKong_SIS457Character::MoveRight(float Value)
 	// add movement in that direction
 	AddMovementInput(FVector(0.f,-1.f,0.f), Value);
 }
+
+/*void ADonkeyKong_SIS457Character::MoveForward(float Val)  //agregado para que se mueva en el eje X
+{
+	AddMovementInput(FVector(-1.f, 0.f, 0.f), Val);
+}*/
 
 void ADonkeyKong_SIS457Character::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
 {
