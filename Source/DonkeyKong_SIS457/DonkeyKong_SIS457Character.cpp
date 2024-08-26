@@ -41,6 +41,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	GetCharacterMovement()->MaxWalkSpeed = 900.f;  //valor por defecto 600
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 
+
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
@@ -57,6 +58,7 @@ void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponen
 
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &ADonkeyKong_SIS457Character::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &ADonkeyKong_SIS457Character::TouchStopped);
+
 }
 
 void ADonkeyKong_SIS457Character::MoveRight(float Value)

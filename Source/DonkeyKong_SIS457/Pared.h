@@ -26,6 +26,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
-
+protected:
+	bool subir;
+	FVector posicionInicial;
+	FVector posicionActual;
+	FVector posicionFinal;
+	float incrementoZ;
 };

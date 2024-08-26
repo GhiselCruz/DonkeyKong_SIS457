@@ -8,6 +8,7 @@
 #include "Obstaculo.h"
 
 
+
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 {
 	// set default pawn class to our Blueprinted character
@@ -44,22 +45,21 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	}*/
 
 
-	//Spawnamos nuestro obstaculo
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("Actor Spawning"));
 	// Spawn an instance of the AMyFirstActor class at the
 	//default location.
 	FTransform SpawnLocation;
-	SpawnLocation.SetLocation(FVector(1160.0f, -210.0f, 140.0f));
-	SpawnLocation.SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f)));		
-	GetWorld()->SpawnActor<AObstaculo>(AObstaculo::StaticClass(), SpawnLocation);
+	SpawnLocation.SetLocation(FVector(1160.0f, -210.0f, 350.0f));
+	SpawnLocation.SetRotation(FQuat(FRotator(0.0f, 180.0f, 90.0f)));
+	GetWorld()->SpawnActor<APared>(APared::StaticClass(), SpawnLocation);
 
 
 	
 	//Spawneamos nuestra pared
-	GetWorld()->SpawnActor<APared>(APared::StaticClass(), FVector(1206.0f, 205.0f, 250.0f), FRotator::ZeroRotator);
+	GetWorld()->SpawnActor<AObstaculo>(AObstaculo::StaticClass(), FVector(1206.0f, 205.0f, 250.0f), FRotator::ZeroRotator);
 
 	//Spawneamos nuestra roca
-	GetWorld()->SpawnActor<ARoca>(ARoca::StaticClass(), FVector(1180.0f, -500.0f, 100.0f), FRotator::ZeroRotator);
+	GetWorld()->SpawnActor<ARoca>(ARoca::StaticClass(), FVector(1200.0f, -600.0f, 100.0f), FRotator::ZeroRotator);
 }
 
 void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)

@@ -14,7 +14,8 @@ class DONKEYKONG_SIS457_API AObstaculo : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AObstaculo();
-protected:
+
+	//malla para nuestro obstaculo
 	UStaticMeshComponent* mallaObstaculo;
 
 protected:
@@ -24,12 +25,5 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-protected:
-	bool subir;
-	FVector posicionInicial;
-	FVector posicionActual;
-	FVector posicionFinal;
-	float incrementoZ;
 
 };

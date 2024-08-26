@@ -15,13 +15,14 @@ AEnemigo::AEnemigo()
 
 
 	//malla del enemigo
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/Meshes/Food.Food'"));
 	mallaEnemigo = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	mallaEnemigo->SetStaticMesh(ShipMesh.Object);
 	mallaEnemigo->SetupAttachment(RootComponent);
 	RootComponent = mallaEnemigo;
 
-
+	FVector NewScale(4.0f, 4.0f, 4.0f); // Cambia estos valores según tus necesidades
+	SetActorScale3D(NewScale);
 
 }
 
