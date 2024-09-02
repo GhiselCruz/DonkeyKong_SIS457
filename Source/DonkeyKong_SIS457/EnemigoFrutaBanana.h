@@ -15,6 +15,7 @@ class DONKEYKONG_SIS457_API AEnemigoFrutaBanana : public AEnemigoFruta
 	GENERATED_BODY()
 	
 
+
 protected:
 	float velocidadDezlizamiento;
 	float capacidadDano;

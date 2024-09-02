@@ -14,6 +14,8 @@ class DONKEYKONG_SIS457_API AEnemigoObjetoBomba : public AEnemigoObjeto
 {
 	GENERATED_BODY()
 
+
+
 protected:
 	FString tipoExplosivo;
 	float tiempoExplosion;

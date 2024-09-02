@@ -13,6 +13,8 @@ UCLASS()
 class DONKEYKONG_SIS457_API AEnemigoAnimalDragon : public AEnemigoAnimal
 {
 	GENERATED_BODY()
+
+
 	
 private:
 	int temperaturaFuego;

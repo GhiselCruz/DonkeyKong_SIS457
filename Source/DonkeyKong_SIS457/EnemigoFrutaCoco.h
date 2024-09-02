@@ -15,6 +15,7 @@ class DONKEYKONG_SIS457_API AEnemigoFrutaCoco : public AEnemigoFruta
 	GENERATED_BODY()
 	
 
+
 protected:
 	float resistenciaCascara;
 	float velocidadCaida;

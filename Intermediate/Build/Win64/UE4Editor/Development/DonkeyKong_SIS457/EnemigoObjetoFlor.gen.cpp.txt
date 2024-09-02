@@ -1,9 +1,0 @@
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.DonkeyKong_SIS457.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Source\DonkeyKong_SIS457/EnemigoObjetoFlor.h
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\EnemigoObjeto.h
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Enemigo.h
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Enemigo.generated.h
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\EnemigoObjeto.generated.h
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\EnemigoObjetoFlor.generated.h

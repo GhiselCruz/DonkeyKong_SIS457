@@ -14,6 +14,7 @@ class DONKEYKONG_SIS457_API AEnemigoVegetalHongo : public AEnemigoVegetal
 {
 	GENERATED_BODY()
 
+
 protected:
 	float efectoContaminacion;
 	float tamanoSombrero;

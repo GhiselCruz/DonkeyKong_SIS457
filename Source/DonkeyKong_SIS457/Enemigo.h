@@ -15,6 +15,9 @@ public:
 	// Sets default values for this actor's properties
 	AEnemigo();
 
+	
+
+
 	//malla del enemigo
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Proyectile, meta = (AllowPrivateAccess = "true"));
 	UStaticMeshComponent* mallaEnemigo;

@@ -14,6 +14,8 @@ class DONKEYKONG_SIS457_API AEnemigoFrutaSandia : public AEnemigoFruta
 {
 	GENERATED_BODY()
 	
+
+
 protected:
 	float resistenciaCorteza;
 	float nivelDano;

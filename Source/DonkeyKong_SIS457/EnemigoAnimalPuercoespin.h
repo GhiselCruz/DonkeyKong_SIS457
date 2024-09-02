@@ -14,6 +14,7 @@ class DONKEYKONG_SIS457_API AEnemigoAnimalPuercoespin : public AEnemigoAnimal
 {
 	GENERATED_BODY()
 
+
 private:
 	int cantidadEspinas;  //propiedad propia
 	int velocidadLanzamientoPuas;

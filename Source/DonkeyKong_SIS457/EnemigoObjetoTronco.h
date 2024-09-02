@@ -14,6 +14,7 @@ class DONKEYKONG_SIS457_API AEnemigoObjetoTronco : public AEnemigoObjeto
 {
 	GENERATED_BODY()
 
+
 protected:
 	float longitudTronco;
 	float durezaMadera;

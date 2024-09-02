@@ -14,14 +14,15 @@ class DONKEYKONG_SIS457_API AEnemigoAnimal : public AEnemigo
 {
 	GENERATED_BODY()
 
+
 protected:
-	float capacidadDaño;
+	float capacidadDano;
 	FString tipoAtaque;
 
 
 	//Metodos accesores Get y Set
-	float GetCapacidadDaño() const { return capacidadDaño; }
-	void SetCapacidadDaño(float _capacidadDaño) { capacidadDaño = _capacidadDaño; }
+	float GetCapacidadDano() const { return capacidadDano; }
+	void SetCapacidadDano(float _capacidadDano) { capacidadDano = _capacidadDano; }
       
 	FString GetTipoAtaque() const { return tipoAtaque; }
 	void SetTipoAtaque(FString _tipoAtaque) { tipoAtaque = _tipoAtaque; }

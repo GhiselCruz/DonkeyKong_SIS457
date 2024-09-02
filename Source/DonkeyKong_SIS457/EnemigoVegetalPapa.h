@@ -13,7 +13,7 @@ UCLASS()
 class DONKEYKONG_SIS457_API AEnemigoVegetalPapa : public AEnemigoVegetal
 {
 	GENERATED_BODY()
-	
+
 
 protected:
 	float capacidadRegeneracion;

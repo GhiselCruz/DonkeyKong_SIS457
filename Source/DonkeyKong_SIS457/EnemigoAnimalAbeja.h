@@ -15,6 +15,7 @@ class DONKEYKONG_SIS457_API AEnemigoAnimalAbeja : public AEnemigoAnimal
 	GENERATED_BODY()
 	
 
+
 protected:
 	float poderPicadura;
 	float frecuenciaAtaque;

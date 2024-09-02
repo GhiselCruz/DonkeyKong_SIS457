@@ -13,6 +13,8 @@ UCLASS()
 class DONKEYKONG_SIS457_API AEnemigoVegetal : public AEnemigo
 {
 	GENERATED_BODY()
+
+
 	
 protected:
 	FString tipoVegetal;

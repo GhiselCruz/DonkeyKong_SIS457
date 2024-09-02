@@ -14,6 +14,8 @@ class DONKEYKONG_SIS457_API AEnemigoObjeto : public AEnemigo
 {
 	GENERATED_BODY()
 
+
+
 protected:
 	FString efectoImpacto;
 

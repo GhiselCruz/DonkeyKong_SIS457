@@ -14,6 +14,7 @@ class DONKEYKONG_SIS457_API AEnemigoObjetoBarril : public AEnemigoObjeto
 {
 	GENERATED_BODY()
 
+
 protected:
 	FString tipoContenido;
 	float capacidadCarga;

@@ -14,6 +14,8 @@ class DONKEYKONG_SIS457_API AEnemigoFruta : public AEnemigo
 {
 	GENERATED_BODY()
 	
+
+
 protected:
 	float nivelGolpe;
 	FString tipoFruta;

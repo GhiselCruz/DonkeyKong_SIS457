@@ -14,6 +14,7 @@ class DONKEYKONG_SIS457_API AEnemigoVegetalBrocoli : public AEnemigoVegetal
 {
 	GENERATED_BODY()
 
+
 protected:
 	float resistenciaAtaque;
 

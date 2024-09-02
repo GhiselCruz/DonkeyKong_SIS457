@@ -26,6 +26,8 @@ AEnemigo::AEnemigo()
 
 }
 
+
+
 // Called when the game starts or when spawned
 void AEnemigo::BeginPlay()
 {
