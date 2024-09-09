@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_ADonkeyKong_SIS457GameMode();
 	ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 	UPackage* Z_Construct_UPackage__Script_DonkeyKong_SIS457();
+	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_APlataformas_NoRegister();
 // End Cross Module References
 	void ADonkeyKong_SIS457GameMode::StaticRegisterNativesADonkeyKong_SIS457GameMode()
 	{
@@ -31,6 +32,13 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_PlataformaMap_ValueProp;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_PlataformaMap_Key_KeyProp;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PlataformaMap_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FMapPropertyParams NewProp_PlataformaMap;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -46,6 +54,22 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
 #endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap_ValueProp = { "PlataformaMap", nullptr, (EPropertyFlags)0x0000000000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 1, Z_Construct_UClass_APlataformas_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap_Key_KeyProp = { "PlataformaMap_Key", nullptr, (EPropertyFlags)0x0000000000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap_MetaData[] = {
+		{ "Category", "Plataformas" },
+		{ "Comment", "//Creamos nuestro TMap\n" },
+		{ "ModuleRelativePath", "DonkeyKong_SIS457GameMode.h" },
+		{ "ToolTip", "Creamos nuestro TMap" },
+	};
+#endif
+	const UE4CodeGen_Private::FMapPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap = { "PlataformaMap", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457GameMode, PlataformaMap), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap_ValueProp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap_Key_KeyProp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::NewProp_PlataformaMap,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ADonkeyKong_SIS457GameMode>::IsAbstract,
 	};
@@ -55,11 +79,11 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::PropPointers),
 		0,
 		0x008802ACu,
 		METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457GameMode_Statics::Class_MetaDataParams))
@@ -73,7 +97,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457GameMode() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ADonkeyKong_SIS457GameMode, 2361069462);
+	IMPLEMENT_CLASS(ADonkeyKong_SIS457GameMode, 1115494930);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<ADonkeyKong_SIS457GameMode>()
 	{
 		return ADonkeyKong_SIS457GameMode::StaticClass();

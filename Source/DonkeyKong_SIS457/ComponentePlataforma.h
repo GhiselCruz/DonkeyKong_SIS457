@@ -20,7 +20,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	//PROPERTY(EditAnywhere, Category = "Mesh")
-	UStaticMeshComponent* mallaPlataforma;
+	UStaticMeshComponent* mallaComponentePlataforma;
 
 public:	
 	// Called every frame

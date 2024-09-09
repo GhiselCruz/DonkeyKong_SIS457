@@ -8,6 +8,8 @@
 
 class AComponentePlataforma;
 class ABarril;
+class APlataformas;
+
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
 {
@@ -35,6 +37,13 @@ public:
 
 	TArray<AComponentePlataforma*> componentesPlataforma;
 	TArray<ABarril*> barriles;
+
+
+	//Creamos nuestro TMap
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plataformas")
+	TMap<int32, APlataformas* > PlataformaMap;
+
+
 public:
 	//called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -42,9 +51,18 @@ public:
 public:
 	void SpawnBarril();
 
+
+
+	int numeroPlataformas;
+	void crearPlataforma();
+
 private:
 	FTimerHandle SpawnBarrilTimerHandle;
 	int numeroBarriles;
+
+
+
+
 
 };
 

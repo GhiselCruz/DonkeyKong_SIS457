@@ -11,9 +11,9 @@ AComponentePlataforma::AComponentePlataforma()
 
 	ConstructorHelpers::FObjectFinder<UStaticMesh> MeshAsset = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Game/Geometry/Meshes/1M_Cube.1M_Cube'"));
 
-	mallaPlataforma = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-	mallaPlataforma->SetStaticMesh(MeshAsset.Object);
-	RootComponent = mallaPlataforma;
+	mallaComponentePlataforma = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	mallaComponentePlataforma->SetStaticMesh(MeshAsset.Object);
+	RootComponent = mallaComponentePlataforma;
 
 	FVector NewScale(2.0f, 6.0f, 0.5f); // Cambia estos valores según tus necesidades
 	SetActorScale3D(NewScale);

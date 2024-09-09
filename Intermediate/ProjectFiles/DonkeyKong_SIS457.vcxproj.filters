@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_SIS457.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{5756AE40-3C7C-45C8-8EC9-3D17800C8C9E}</UniqueIdentifier>
+      <UniqueIdentifier>{5ACC2689-BB29-4D5D-9041-626F051C31EA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_SIS457.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\Source_LAB02.zip" />
     <Filter Include="Config">
-      <UniqueIdentifier>{CF0C7FEB-65F0-4CAB-B654-550BC1E35552}</UniqueIdentifier>
+      <UniqueIdentifier>{DFE9A2CF-25A6-4FCA-8EBE-79323EA5646A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_SIS457">
-      <UniqueIdentifier>{BEC007D4-3559-4410-B3A3-88C1E2972F84}</UniqueIdentifier>
+      <UniqueIdentifier>{4D815FE2-8AC2-423A-A8B7-3D502E18D15D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Barril.cpp">
       <Filter>Source\DonkeyKong_SIS457</Filter>
@@ -170,6 +170,12 @@
     <ClInclude Include="..\..\Source\DonkeyKong_SIS457\EnemigoVegetalPapa.h">
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Escaleras.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Escaleras.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Obstaculo.cpp">
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClCompile>
@@ -180,6 +186,12 @@
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Pared.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Plataformas.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Plataformas.h">
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Roca.cpp">
