@@ -7,7 +7,7 @@
 #include "DonkeyKong_SIS457GameMode.generated.h"
 
 class AComponentePlataforma;
-
+class ABarril;
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
 {
@@ -24,6 +24,8 @@ public:
 
 	AEnemigo* enemigo;
 
+	//ABarril* barril;
+
 	
 	/*AComponentePlataforma* cp01;
 	AComponentePlataforma* cp02;
@@ -32,11 +34,17 @@ public:
 	AComponentePlataforma* cp05;*/
 
 	TArray<AComponentePlataforma*> componentesPlataforma;
-
+	TArray<ABarril*> barriles;
 public:
 	//called every frame
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	void SpawnBarril();
+
+private:
+	FTimerHandle SpawnBarrilTimerHandle;
+	int numeroBarriles;
 
 };
 

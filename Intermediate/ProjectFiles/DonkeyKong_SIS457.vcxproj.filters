@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_SIS457.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{FC2A17E9-018B-46C2-A169-3EB4D8FE686A}</UniqueIdentifier>
+      <UniqueIdentifier>{5756AE40-3C7C-45C8-8EC9-3D17800C8C9E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_SIS457.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\Source_LAB02.zip" />
     <Filter Include="Config">
-      <UniqueIdentifier>{74F76869-14A1-4459-9268-92E7FBEB7C53}</UniqueIdentifier>
+      <UniqueIdentifier>{CF0C7FEB-65F0-4CAB-B654-550BC1E35552}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,8 +33,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_SIS457">
-      <UniqueIdentifier>{D49FA568-6E32-46AE-9548-617198678ED4}</UniqueIdentifier>
+      <UniqueIdentifier>{BEC007D4-3559-4410-B3A3-88C1E2972F84}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Barril.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Barril.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\ComponentePlataforma.cpp">
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClCompile>

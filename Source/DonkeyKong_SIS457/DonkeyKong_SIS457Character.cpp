@@ -36,7 +36,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 720.0f, 0.0f); // ...at this rotation rate
 	GetCharacterMovement()->GravityScale = 2.f;
 	GetCharacterMovement()->AirControl = 0.80f;
-	GetCharacterMovement()->JumpZVelocity = 1000.f;
+	GetCharacterMovement()->JumpZVelocity = 1100.f;    //valor por defecto 1000 
 	GetCharacterMovement()->GroundFriction = 3.f;
 	GetCharacterMovement()->MaxWalkSpeed = 900.f;  //valor por defecto 600
 	GetCharacterMovement()->MaxFlySpeed = 600.f;

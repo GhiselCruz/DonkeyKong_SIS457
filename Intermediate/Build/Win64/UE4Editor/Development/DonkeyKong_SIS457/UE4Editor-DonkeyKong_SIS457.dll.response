@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\DonkeyKong_SIS457Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Barril.cpp.obj"
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\ComponentePlataforma.cpp.obj"
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457.cpp.obj"
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457Character.cpp.obj"
@@ -58,6 +59,7 @@
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Obstaculo.cpp.obj"
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Pared.cpp.obj"
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Roca.cpp.obj"
+"C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Barril.gen.cpp.obj"
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\ComponentePlataforma.gen.cpp.obj"
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457.init.gen.cpp.obj"
 "C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\DonkeyKong_SIS457Character.gen.cpp.obj"

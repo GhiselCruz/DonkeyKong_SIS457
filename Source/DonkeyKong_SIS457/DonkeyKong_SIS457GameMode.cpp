@@ -7,6 +7,7 @@
 #include "Roca.h"
 #include "Obstaculo.h"
 #include "ComponentePlataforma.h"
+#include "Barril.h"
 
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
@@ -17,6 +18,8 @@ ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
+	numeroBarriles = 0;
 }
 
 void ADonkeyKong_SIS457GameMode::BeginPlay()
@@ -32,121 +35,141 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	enemigo->Destruirse();
 
 
-	/*FVector ubicacionInicial = FVector(900.0f, 500.0f, 250.0f);
-
-	FRotator rotacionEnemigo = FRotator(0.0f, 0.0f, 0.0f);
-
-	UWorld* const World = GetWorld();
-	if (World != nullptr)
-	{
-		// spawn the projectile
-
-		enemigo = World->SpawnActor<AEnemigo>(ubicacionInicial, rotacionEnemigo);
-	}*/
-
 
 	GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Yellow, TEXT("Actor Spawning"));
+
+	//Spawneamos nuestra pared
 	// Spawn an instance of the AMyFirstActor class at the
 	//default location.
-	FTransform SpawnLocation;
-	SpawnLocation.SetLocation(FVector(1160.0f, -210.0f, 350.0f));
-	SpawnLocation.SetRotation(FQuat(FRotator(0.0f, 180.0f, 90.0f)));
-	GetWorld()->SpawnActor<APared>(APared::StaticClass(), SpawnLocation);
+	//FTransform SpawnLocation;
+	//SpawnLocation.SetLocation(FVector(1160.0f, -210.0f, 350.0f));
+	//SpawnLocation.SetRotation(FQuat(FRotator(0.0f, 180.0f, 90.0f)));
+	//GetWorld()->SpawnActor<APared>(APared::StaticClass(), SpawnLocation);
 
 
 
 	//Spawneamos nuestra pared
-	GetWorld()->SpawnActor<AObstaculo>(AObstaculo::StaticClass(), FVector(1206.0f, 205.0f, 250.0f), FRotator::ZeroRotator);
+	//GetWorld()->SpawnActor<AObstaculo>(AObstaculo::StaticClass(), FVector(1206.0f, 205.0f, 250.0f), FRotator::ZeroRotator);
 
 	//Spawneamos nuestra roca
 	GetWorld()->SpawnActor<ARoca>(ARoca::StaticClass(), FVector(1200.0f, -600.0f, 100.0f), FRotator::ZeroRotator);
+
+	//Spawneamos nuestro barril
+	//GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), FVector(1670.0f, 1550.0f, 2100.0f), FRotator(0.0f, 90.0f, 90.0f));
 
 
 	//Componente plataforma   
 	//Contenedor TArray
 
-	/*FVector posicionInicial = FVector(1160.0f, -500.0f, 500.f);
+	/*FVector posicionInicial = FVector(1160.0f, -200.0f, 750.f);                        //Codigo del ingeniero
 	FRotator rotacionInicial = FRotator(0.0f, 0.0f, 15);
 	FTransform SpawnLocationCP;
 
-	for (int npp = 0; npp < 5; npp++)
+
+
+	for (int npp = 0; npp < 2; npp++)                        //numero de pisos
 	{
 		rotacionInicial.Roll = rotacionInicial.Roll * -1;
-		posicionInicial.Z = posicionInicial.Z + 200;
+		posicionInicial.Z += 250.0f;
+		posicionInicial.Y += 200.0f;
 
 		SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
-		for (int ncp = 0; ncp < 5; ncp++) {
-			SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y * ncp, posicionInicial.Z));
+		for (int ncp = 0; ncp < 3; ncp++) {                               //numero de plataformas
+
+			SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
 			componentesPlataforma.Add(GetWorld()->SpawnActor<AComponentePlataforma>(AComponentePlataforma::StaticClass(), SpawnLocationCP));
+			posicionInicial.Y += 520.0f;
+			posicionInicial.Z += 140.0f;
+			rotacionInicial.Roll = rotacionInicial.Roll * -1;
+
 		}
+
+		//rotacionInicial.Roll = rotacionInicial.Roll * -1;
+
+		posicionInicial.Z -= 100.0f;
+        posicionInicial.Y -= 140.0f;
 	}*/
 
 
-	UWorld* World = GetWorld();
-	if (!World) return;
 
-	FVector posicionCentral = FVector(1160.0f, 0.0f, 500.0f);
-	FRotator rotacionInicial = FRotator(0.0f, 0.0f, 15.0f);
-	FTransform SpawnLocationCP;
 
-	// Cantidades de plataformas hacia la izquierda y derecha
-	const int32 plataformasPorLado = 3;
-	const float separacionEntrePlataformas = 700.0f;
-	const float desplazamientoLateral = -1550.0f; // Ajusta este valor según el diseño
-	const float incrementoAltura = 50.0f; // Incremento en el eje z para cada plataforma
+	                                                                      
 
-	// Spawnear plataformas hacia la derecha
-	for (int32 npp = 0; npp < plataformasPorLado; npp++)
-	{
-		rotacionInicial.Roll = rotacionInicial.Roll * -1; // Alternar rotación
+ 
 
-		// Ajustar la posición Z inicial para cada fila de plataformas
-		float alturaActual = posicionCentral.Z + npp * separacionEntrePlataformas;
 
-		SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
 
-		for (int32 ncp = 0; ncp < plataformasPorLado; ncp++)
-		{
-			FVector location = FVector(
-				posicionCentral.X + desplazamientoLateral,
-				posicionCentral.Y + (ncp * separacionEntrePlataformas),
-				alturaActual + ncp * incrementoAltura // Ajuste de altura Z
-			);
-			SpawnLocationCP.SetLocation(location);
-			AComponentePlataforma* plataformaSpawned = World->SpawnActor<AComponentePlataforma>(AComponentePlataforma::StaticClass(), SpawnLocationCP);
-			if (plataformaSpawned)
-			{
-				componentesPlataforma.Add(plataformaSpawned);
-			}
-		}
-	}
 
-	// Spawnear plataformas hacia la izquierda
-	for (int32 npp = 0; npp < plataformasPorLado; npp++)
-	{
-		rotacionInicial.Roll = rotacionInicial.Roll * -1; // Alternar rotación
 
-		// Ajustar la posición Z inicial para cada fila de plataformas
-		float alturaActual = posicionCentral.Z + npp * separacionEntrePlataformas;
+// PISO HACIA LA DERECHA
 
-		SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
+FVector posicionInicial = FVector(1160.0f, -200.0f, 150.f);                        //Codigo del ingeniero X2
+FRotator rotacionInicial = FRotator(0.0f, 0.0f, 15);
+FTransform SpawnLocationCP;
 
-		for (int32 ncp = 0; ncp < plataformasPorLado; ncp++)
-		{
-			FVector location = FVector(
-				posicionCentral.X - desplazamientoLateral,
-				posicionCentral.Y + (ncp * separacionEntrePlataformas),
-				alturaActual + ncp * incrementoAltura // Ajuste de altura Z
-			);
-			SpawnLocationCP.SetLocation(location);
-			AComponentePlataforma* plataformaSpawned = World->SpawnActor<AComponentePlataforma>(AComponentePlataforma::StaticClass(), SpawnLocationCP);
-			if (plataformaSpawned)
-			{
-				componentesPlataforma.Add(plataformaSpawned);
-			}
-		}
+
+
+for (int npp = 0; npp < 3; npp++)                        //NUMERO DE PISOS
+{
+	rotacionInicial.Roll = rotacionInicial.Roll * -1;
+	posicionInicial.Z += 450.0f;
+	//posicionInicial.Y += 200.0f;
+
+	SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
+	for (int ncp = 0; ncp < 3; ncp++) {                               //NUMERO DE PLATAFORMAS
+
+		SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
+		componentesPlataforma.Add(GetWorld()->SpawnActor<AComponentePlataforma>(AComponentePlataforma::StaticClass(), SpawnLocationCP));
+		posicionInicial.Y += 520.0f;
+		posicionInicial.Z += 140.0f;
+		rotacionInicial.Roll = rotacionInicial.Roll * -1;
 
 	}
+
+	//rotacionInicial.Roll = rotacionInicial.Roll * -1;
+
+	//posicionInicial.Z -= 100.0f;
+	posicionInicial.Y -= 1530.0f;
+	posicionInicial.Z += 450.0f;
+}
+
+//PISO HACIA LA IZQUIERDA
+
+FVector posicionInicialI = FVector(1160.0f, -500.0f, 660.f);                        
+FRotator rotacionInicialI = FRotator(0.0f, 0.0f, -15);
+//FTransform SpawnLocationCP;
+
+
+
+for (int nppI = 0; nppI < 3; nppI++)                        //NUMERO DE PISOS
+{
+	rotacionInicialI.Roll = rotacionInicialI.Roll * -1;
+	posicionInicialI.Z += 900.0f;
+	//posicionInicial.Y += 200.0f;
+
+	SpawnLocationCP.SetRotation(FQuat(rotacionInicialI));
+	for (int ncpI = 0; ncpI < 3; ncpI++) {                               //NUMERO DE PLATAFORMAS
+
+		SpawnLocationCP.SetLocation(FVector(posicionInicialI.X, posicionInicialI.Y, posicionInicialI.Z));
+		componentesPlataforma.Add(GetWorld()->SpawnActor<AComponentePlataforma>(AComponentePlataforma::StaticClass(), SpawnLocationCP));
+		posicionInicialI.Y += 520.0f;
+		posicionInicialI.Z -= 140.0f;
+		rotacionInicialI.Roll = rotacionInicialI.Roll * -1;
+
+	}
+
+	//rotacionInicial.Roll = rotacionInicial.Roll * -1;
+
+	//posicionInicial.Z -= 100.0f;
+	posicionInicialI.Y -= 1530.0f;
+	posicionInicialI.Z += 850.0f;
+}
+
+
+ //BARRILES
+
+GetWorldTimerManager().SetTimer(SpawnBarrilTimerHandle, this, &ADonkeyKong_SIS457GameMode::SpawnBarril, 5.0f, true);
+
 }
 
 void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)
@@ -154,4 +177,19 @@ void ADonkeyKong_SIS457GameMode::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 
+}
+
+void ADonkeyKong_SIS457GameMode::SpawnBarril()
+{
+	if (numeroBarriles < 10) {
+
+		// Definir la ubicación y rotación para el nuevo barril
+		FVector SpawnLocation = FVector(1670.0f, 1950.0f, 4250.0f); // Ajusta según sea necesario
+		FRotator SpawnRotation = FRotator(0.0f, 90.0f, 90.0f);
+
+		// Crear el actor barril
+		barriles.Add(GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), SpawnLocation, SpawnRotation));
+		numeroBarriles++;
+	}
+	
 }
