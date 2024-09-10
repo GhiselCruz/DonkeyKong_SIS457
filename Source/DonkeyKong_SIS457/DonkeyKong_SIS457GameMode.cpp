@@ -50,15 +50,21 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 
 
-	//Spawneamos nuestra pared
+	//Spawneamos nuestro obstaculo
 	//GetWorld()->SpawnActor<AObstaculo>(AObstaculo::StaticClass(), FVector(1206.0f, 205.0f, 250.0f), FRotator::ZeroRotator);
 
 	//Spawneamos nuestra roca
 	GetWorld()->SpawnActor<ARoca>(ARoca::StaticClass(), FVector(1200.0f, -600.0f, 100.0f), FRotator::ZeroRotator);
 
 	//Spawneamos nuestra escalera
-	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 2250.0f), FRotator(0.0f, 90.0f, 0.0f));
+    GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 2250.0f), FRotator(0.0f, 90.0f, 0.0f));
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 2700.0f), FRotator(0.0f, 90.0f, 0.0f));
+	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 3250.0f), FRotator(0.0f, 90.0f, 0.0f));
+	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 3700.0f), FRotator(0.0f, 90.0f, 0.0f));
+	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 4250.0f), FRotator(0.0f, 90.0f, 0.0f));
+	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 4700.0f), FRotator(0.0f, 90.0f, 0.0f));
+	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 5250.0f), FRotator(0.0f, 90.0f, 0.0f));
+	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 5700.0f), FRotator(0.0f, 90.0f, 0.0f));
 
 	//Spawneamos nuestro barril
 	//GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), FVector(1670.0f, 1550.0f, 2100.0f), FRotator(0.0f, 90.0f, 90.0f));
@@ -109,7 +115,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 // PISO HACIA LA DERECHA
 
-FVector posicionInicial = FVector(1160.0f, 500.0f, 150.f);                        //Codigo del ingeniero X2
+FVector posicionInicial = FVector(1180.0f, 500.0f, 150.f);                        //Codigo del ingeniero X2
 FRotator rotacionInicial = FRotator(0.0f, 0.0f, 15);
 FTransform SpawnLocationCP;
 
@@ -134,7 +140,7 @@ for (int npp = 0; npp < 3; npp++)                        //NUMERO DE PISOS
 
 //PISO HACIA LA IZQUIERDA
 
-FVector posicionInicialI = FVector(1160.0f, 200.0f, 660.f);                        
+FVector posicionInicialI = FVector(1180.0f, 200.0f, 660.f);                        
 FRotator rotacionInicialI = FRotator(0.0f, 0.0f, -15);
 
 for (int nppI = 0; nppI < 3; nppI++)                        //NUMERO DE PISOS

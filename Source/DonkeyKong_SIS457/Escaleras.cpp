@@ -30,8 +30,8 @@ void AEscaleras::BeginPlay()
 	posicionActual = FVector(0.0f, 0.0f, 0.0f);
 	posicionActual = GetActorLocation();
 	posicionInicial = posicionActual;
-	posicionFinal = posicionActual + FVector(0.0f, 0.0f, 550.0f);
-	incrementoZ = 2.0f;
+	posicionFinal = posicionActual + FVector(0.0f, 0.0f, 650.0f);
+	incrementoZ = 3.0f;
 	subir = false;
 }
 
