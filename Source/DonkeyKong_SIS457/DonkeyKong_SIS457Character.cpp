@@ -87,7 +87,6 @@ void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponen
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &ADonkeyKong_SIS457Character::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &ADonkeyKong_SIS457Character::TouchStopped);
 
-
 }
 
 void ADonkeyKong_SIS457Character::OnFire()
