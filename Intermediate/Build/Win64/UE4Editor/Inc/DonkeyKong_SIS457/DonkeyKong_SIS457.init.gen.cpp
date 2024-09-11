@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x635C3B09,
+				0x9B23BD91,
 				0x645D38EB,
 				METADATA_PARAMS(nullptr, 0)
 			};

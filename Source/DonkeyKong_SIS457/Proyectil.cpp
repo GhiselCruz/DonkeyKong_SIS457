@@ -12,10 +12,10 @@ AProyectil::AProyectil()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> ProjectileMeshAsset(TEXT("StaticMesh'/Game/Meshes/Shapes/Shape_Sphere.Shape_Sphere'"));
+    // Carga estática del mesh para el proyectil
+  // Utiliza FObjectFinder para buscar y cargar el asset del mesh para el proyectil
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> ProjectileMeshAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
 
-    // Crea el componente de malla estática para el proyectil
-    // El componente de malla representa la forma visible del proyectil
     ProyectilMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ProjectileMesh0"));
     ProyectilMesh->SetStaticMesh(ProjectileMeshAsset.Object);
     ProyectilMesh->SetupAttachment(RootComponent);
@@ -23,12 +23,10 @@ AProyectil::AProyectil()
     ProyectilMesh->OnComponentHit.AddDynamic(this, &AProyectil::OnHit);
     RootComponent = ProyectilMesh;
 
-    //SetActorScale3D(FVector(0.1f, 0.1f, 0.1f));
-    
 
-
+	
     // Crea el componente de movimiento del proyectil
-   // Este componente controla cómo se mueve el proyectil en el juego
+    // Este componente controla cómo se mueve el proyectil en el juego
     ProyectilMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement0"));
     ProyectilMovement->UpdatedComponent = ProyectilMesh;
     ProyectilMovement->InitialSpeed = 3000.f;
@@ -40,6 +38,8 @@ AProyectil::AProyectil()
     // Establece la duración del proyectil antes de ser destruido automáticamente
     // Después de este tiempo, el proyectil se destruirá
     InitialLifeSpan = 3.0f;
+
+	
 }
 
 void AProyectil::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
@@ -57,6 +57,7 @@ void AProyectil::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimit
 void AProyectil::BeginPlay()
 {
 	Super::BeginPlay();
+
 	
 }
 
@@ -65,5 +66,11 @@ void AProyectil::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	
+
+	
+
 }
+
+
 

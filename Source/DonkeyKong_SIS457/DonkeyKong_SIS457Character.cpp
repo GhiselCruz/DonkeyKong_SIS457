@@ -7,7 +7,6 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"    
-#include "Proyectil.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/InputComponent.h"
@@ -15,13 +14,19 @@
 #include "Engine/StaticMesh.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
+#include "Proyectil.h"
+#include "TimerManager.h"
+#include "Engine/World.h"
 
 
 
 ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 {
+	// Inicialización del disparo
 	bCanFire = true;
-	FireRate = 0.5f;
+	FireRate = 0.5f; // Ajusta la tasa de disparo según sea necesario
+
+	//GetWorld()->SpawnActor<AProyectil>(AProyectil::StaticClass(), FVector(1200.0f, -900.0f, 250.0f), FRotator::ZeroRotator);
 
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -58,6 +63,61 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+}
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+// Input
+
+void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+{
+	// set up gameplay key bindings
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ADonkeyKong_SIS457Character::OnFire);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ADonkeyKong_SIS457Character::MoveRight);
+	
+	//PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ACharacter::Jump);
+
+	PlayerInputComponent->BindTouch(IE_Pressed, this, &ADonkeyKong_SIS457Character::TouchStarted);
+	PlayerInputComponent->BindTouch(IE_Released, this, &ADonkeyKong_SIS457Character::TouchStopped);
+
+
+}
+
+void ADonkeyKong_SIS457Character::OnFire()
+{
+	// Dispara el proyectil hacia adelante
+	FVector FireDirection = FollowCamera->GetForwardVector(); // Ajusta según la dirección deseada
+	FireShot(FireDirection);
+}
+
+
+void ADonkeyKong_SIS457Character::MoveRight(float Value)
+{
+	// add movement in that direction
+	AddMovementInput(FVector(0.f,-1.f,0.f), Value);
+}
+
+/*void ADonkeyKong_SIS457Character::MoveForward(float Val)  //agregado para que se mueva en el eje X
+{
+	AddMovementInput(FVector(-1.f, 0.f, 0.f), Val);
+}*/
+
+void ADonkeyKong_SIS457Character::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
+{
+	// jump on any touch
+	Jump();
+}
+
+void ADonkeyKong_SIS457Character::TouchStopped(const ETouchIndex::Type FingerIndex, const FVector Location)
+{
+	StopJumping();
 }
 
 void ADonkeyKong_SIS457Character::FireShot(FVector FireDirection)
@@ -97,53 +157,3 @@ void ADonkeyKong_SIS457Character::ShotTimerExpired()
 {
 	bCanFire = true;
 }
-
-
-
-//////////////////////////////////////////////////////////////////////////
-// Input
-
-void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
-{
-	// set up gameplay key bindings
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-	PlayerInputComponent->BindAxis("MoveRight", this, &ADonkeyKong_SIS457Character::MoveRight);
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ADonkeyKong_SIS457Character::OnFire);
-	//PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ACharacter::Jump);
-
-	PlayerInputComponent->BindTouch(IE_Pressed, this, &ADonkeyKong_SIS457Character::TouchStarted);
-	PlayerInputComponent->BindTouch(IE_Released, this, &ADonkeyKong_SIS457Character::TouchStopped);
-
-
-}
-
-void ADonkeyKong_SIS457Character::OnFire()
-{
-	// Dispara el proyectil hacia adelante
-	FVector FireDirection = FollowCamera->GetForwardVector(); // Ajusta según la dirección deseada
-	FireShot(FireDirection);
-}
-
-void ADonkeyKong_SIS457Character::MoveRight(float Value)
-{
-	// add movement in that direction
-	AddMovementInput(FVector(0.f,-1.f,0.f), Value);
-}
-
-/*void ADonkeyKong_SIS457Character::MoveForward(float Val)  //agregado para que se mueva en el eje X
-{
-	AddMovementInput(FVector(-1.f, 0.f, 0.f), Val);
-}*/
-
-void ADonkeyKong_SIS457Character::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
-{
-	// jump on any touch
-	Jump();
-}
-
-void ADonkeyKong_SIS457Character::TouchStopped(const ETouchIndex::Type FingerIndex, const FVector Location)
-{
-	StopJumping();
-}
-

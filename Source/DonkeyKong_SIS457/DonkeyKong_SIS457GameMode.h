@@ -8,7 +8,7 @@
 class AComponentePlataforma;
 class ABarril;
 class APlataformas;
-
+class AProyectil;
 
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
@@ -37,6 +37,7 @@ public:
 
 	TArray<AComponentePlataforma*> componentesPlataforma;
 	TArray<ABarril*> barriles;
+	//TArray<AProyectil*> proyectiles;
 	
 
 
@@ -52,6 +53,7 @@ public:
 
 public:
 	void SpawnBarril();
+	//void SpawnProyectil();
 
 
 
@@ -61,6 +63,7 @@ public:
 private:
 	FTimerHandle SpawnBarrilTimerHandle;
 	int numeroBarriles;
+	//int numeroProyectiles;
 
 
 

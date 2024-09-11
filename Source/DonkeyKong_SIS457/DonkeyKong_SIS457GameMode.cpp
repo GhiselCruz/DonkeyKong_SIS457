@@ -10,6 +10,7 @@
 #include "Barril.h"
 #include "Plataformas.h"
 #include "Escaleras.h"
+#include "Proyectil.h"
 
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
@@ -65,6 +66,12 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 4700.0f), FRotator(0.0f, 90.0f, 0.0f));
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 5250.0f), FRotator(0.0f, 90.0f, 0.0f));
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 5700.0f), FRotator(0.0f, 90.0f, 0.0f));
+
+
+
+	//Spawneamos nuestro proyectil
+	//GetWorld()->SpawnActor<AProyectil>(AProyectil::StaticClass(), FVector(1200.0f, -900.0f, 250.0f), FRotator::ZeroRotator);
+
 
 	//Spawneamos nuestro barril
 	//GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), FVector(1670.0f, 1550.0f, 2100.0f), FRotator(0.0f, 90.0f, 90.0f));
@@ -195,6 +202,20 @@ void ADonkeyKong_SIS457GameMode::SpawnBarril()
 	}
 	
 }
+
+//void ADonkeyKong_SIS457GameMode::SpawnProyectil()
+//{
+//	if (numeroProyectiles < 10) {
+//
+//		// Definir la ubicación y rotación para el nuevo barril
+//		FVector SpawnLocation1 = FVector(1670.0f, -550.0f, 350.0f); // Ajusta según sea necesario
+//		FRotator SpawnRotation1 = FRotator(0.0f, 90.0f, 90.0f);
+//
+//		// Crear el actor barril
+//		proyectiles.Add(GetWorld()->SpawnActor<AProyectil>(AProyectil::StaticClass(), SpawnLocation1, SpawnRotation1));
+//		numeroProyectiles++;
+//	}
+//}
 
 void ADonkeyKong_SIS457GameMode::crearPlataforma()
 {

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_SIS457.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{5131D21D-C469-4FC6-8FD0-5EEDC1F7F43E}</UniqueIdentifier>
+      <UniqueIdentifier>{6A1F2CF9-C994-4A3F-8EB1-D31386EE7696}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_SIS457.Target.cs">
       <Filter>Source</Filter>
@@ -16,7 +16,7 @@
     <None Include="..\..\Source_ExamenLaboratorio01.zip" />
     <None Include="..\..\Source_LAB02.zip" />
     <Filter Include="Config">
-      <UniqueIdentifier>{59C476CA-3E48-47BB-9E18-3EFD10475943}</UniqueIdentifier>
+      <UniqueIdentifier>{CFB23C72-E666-4816-92D4-F99707E5D84C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -34,7 +34,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_SIS457">
-      <UniqueIdentifier>{9CDE488D-D210-4635-86E0-E9A50A5A5C2A}</UniqueIdentifier>
+      <UniqueIdentifier>{30B63149-741B-4C16-93C9-593597873392}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Barril.cpp">
       <Filter>Source\DonkeyKong_SIS457</Filter>

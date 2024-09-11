@@ -10,6 +10,7 @@ UCLASS()
 class DONKEYKONG_SIS457_API AProyectil : public AActor
 {
 	GENERATED_BODY()
+	
 	/** Sphere collision component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* ProyectilMesh;
@@ -17,10 +18,11 @@ class DONKEYKONG_SIS457_API AProyectil : public AActor
 	/** Projectile movement component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProyectilMovement;
-	
+
 public:	
 	// Sets default values for this actor's properties
 	AProyectil();
+
 
 	/** Function to handle the projectile hitting something */
 	UFUNCTION()
@@ -30,7 +32,7 @@ public:
 	FORCEINLINE UStaticMeshComponent* GetProjectileMesh() const { return ProyectilMesh; }
 	/** Returns ProjectileMovement subobject **/
 	FORCEINLINE UProjectileMovementComponent* GetProjectileMovement() const { return ProyectilMovement; }
-	
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -40,4 +42,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+//protected:
+//	bool subir;
+//	FVector posicionInicial;
+//	FVector posicionActual;
+//	FVector posicionFinal;
+//	float incrementoY;
+
+	
 };

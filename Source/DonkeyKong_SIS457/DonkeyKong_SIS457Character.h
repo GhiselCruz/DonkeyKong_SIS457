@@ -1,10 +1,10 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #pragma once
+
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "DonkeyKong_SIS457Character.generated.h"
-class AProyectil;
 
 UCLASS(config=Game)
 class ADonkeyKong_SIS457Character : public ACharacter
@@ -22,6 +22,9 @@ class ADonkeyKong_SIS457Character : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
+
+
+
 
 protected:
 
@@ -51,33 +54,41 @@ public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 
-	/** Offset from the ships location to spawn projectiles */
+	
+
+
+	//Proyectil
+	//implementacion de disparo de proyectiles ----------------------------------------------------------
+		/** Desplazamiento desde la ubicación de la nave para generar proyectiles */
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
 	FVector GunOffset;
 
-	/* How fast the weapon will fire */
+	/* La velocidad a la que el arma disparará */
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
 	float FireRate;
-
-	/* The speed our ship moves around the level */
-	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
-	float MoveSpeed;
-
-	/** Sound to play each time we fire */
+	/** Sonido a reproducir cada vez que disparamos */
 	UPROPERTY(Category = Audio, EditAnywhere, BlueprintReadWrite)
 	class USoundBase* FireSound;
-
-	/* Fire a shot in the specified direction */
+	// Dispara un proyectil en la dirección especificada 
 	void FireShot(FVector FireDirection);
 
-	/* Handler for the fire timer expiry */
+	// Manejador para la expiración del temporizador de disparo 
 	void ShotTimerExpired();
 
 private:
 
-	/* Flag to control firing  */
+	/* Indicador para controlar el disparo */
 	uint32 bCanFire : 1;
 
-	/** Handle for efficient management of ShotTimerExpired timer */
+	/** Manejador para la gestión eficiente del temporizador de disparo */
 	FTimerHandle TimerHandle_ShotTimerExpired;
+
+protected:
+	UPROPERTY(EditDefaultsOnly, Category = "Projectile")
+	TSubclassOf<class AProyectil> ProjectileClass;
+
+	
+
+
+
 };

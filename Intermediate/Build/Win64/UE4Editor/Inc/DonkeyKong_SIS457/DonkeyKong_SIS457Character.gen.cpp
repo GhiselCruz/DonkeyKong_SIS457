@@ -21,6 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	DONKEYKONG_SIS457_API UClass* Z_Construct_UClass_AProyectil_NoRegister();
 // End Cross Module References
 	void ADonkeyKong_SIS457Character::StaticRegisterNativesADonkeyKong_SIS457Character()
 	{
@@ -56,13 +58,13 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_FireRate;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MoveSpeed_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MoveSpeed;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FireSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ProjectileClass;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -114,47 +116,45 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_GunOffset_MetaData[] = {
 		{ "Category", "Gameplay" },
-		{ "Comment", "/** Offset from the ships location to spawn projectiles */" },
+		{ "Comment", "/** Desplazamiento desde la ubicaci?n de la nave para generar proyectiles */" },
 		{ "ModuleRelativePath", "DonkeyKong_SIS457Character.h" },
-		{ "ToolTip", "Offset from the ships location to spawn projectiles" },
+		{ "ToolTip", "Desplazamiento desde la ubicaci?n de la nave para generar proyectiles" },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_GunOffset = { "GunOffset", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457Character, GunOffset), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_GunOffset_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_GunOffset_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireRate_MetaData[] = {
 		{ "Category", "Gameplay" },
-		{ "Comment", "/* How fast the weapon will fire */" },
+		{ "Comment", "/* La velocidad a la que el arma disparar? */" },
 		{ "ModuleRelativePath", "DonkeyKong_SIS457Character.h" },
-		{ "ToolTip", "How fast the weapon will fire" },
+		{ "ToolTip", "La velocidad a la que el arma disparar?" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireRate = { "FireRate", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457Character, FireRate), METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireRate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireRate_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_MoveSpeed_MetaData[] = {
-		{ "Category", "Gameplay" },
-		{ "Comment", "/* The speed our ship moves around the level */" },
-		{ "ModuleRelativePath", "DonkeyKong_SIS457Character.h" },
-		{ "ToolTip", "The speed our ship moves around the level" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_MoveSpeed = { "MoveSpeed", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457Character, MoveSpeed), METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_MoveSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_MoveSpeed_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireSound_MetaData[] = {
 		{ "Category", "Audio" },
-		{ "Comment", "/** Sound to play each time we fire */" },
+		{ "Comment", "/** Sonido a reproducir cada vez que disparamos */" },
 		{ "ModuleRelativePath", "DonkeyKong_SIS457Character.h" },
-		{ "ToolTip", "Sound to play each time we fire" },
+		{ "ToolTip", "Sonido a reproducir cada vez que disparamos" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireSound = { "FireSound", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457Character, FireSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_ProjectileClass_MetaData[] = {
+		{ "Category", "Projectile" },
+		{ "ModuleRelativePath", "DonkeyKong_SIS457Character.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_ProjectileClass = { "ProjectileClass", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADonkeyKong_SIS457Character, ProjectileClass), Z_Construct_UClass_AProyectil_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_ProjectileClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_ProjectileClass_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_SideViewCameraComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_CameraBoom,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FollowCamera,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_GunOffset,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireRate,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_MoveSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_FireSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::NewProp_ProjectileClass,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ADonkeyKong_SIS457Character_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ADonkeyKong_SIS457Character>::IsAbstract,
@@ -183,7 +183,7 @@ void EmptyLinkFunctionForGeneratedCodeDonkeyKong_SIS457Character() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ADonkeyKong_SIS457Character, 3614936527);
+	IMPLEMENT_CLASS(ADonkeyKong_SIS457Character, 130355372);
 	template<> DONKEYKONG_SIS457_API UClass* StaticClass<ADonkeyKong_SIS457Character>()
 	{
 		return ADonkeyKong_SIS457Character::StaticClass();
