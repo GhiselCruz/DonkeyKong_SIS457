@@ -211,6 +211,7 @@ void ADonkeyKong_SIS457GameMode::crearPlataforma()
 			{
 				//SpawnLocationNP.SetLocation(FVector(ubicacion1.X, ubicacion1.Y, ubicacion1.Z));
 			    APlataformas* plataforma1 = GetWorld()->SpawnActor<APlataformas>(ubicacion1, rotacion1);
+				PlataformaMap.Add(1, plataforma1);
 				ubicacion1.Z += 90.0f;
 				ubicacion1.Y -= 367.0f;
 				//rotacion1.Roll = rotacion1.Roll * -1;
@@ -231,6 +232,7 @@ void ADonkeyKong_SIS457GameMode::crearPlataforma()
 			{
 				//SpawnLocationNP.SetLocation(FVector(ubicacion2.X, ubicacion2.Y, ubicacion2.Z));
 			    APlataformas* plataforma2 = GetWorld()->SpawnActor<APlataformas>(ubicacion2, rotacion2);
+				PlataformaMap.Add(2, plataforma2);
 				ubicacion2.Z += 90.0f;
 			    ubicacion2.Y += 367.0f;
 				//rotacion2.Roll = rotacion2.Roll * -1;

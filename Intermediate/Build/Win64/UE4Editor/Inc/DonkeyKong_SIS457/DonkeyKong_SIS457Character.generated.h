@@ -60,7 +60,8 @@ public: \
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_12_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__SideViewCameraComponent() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, SideViewCameraComponent); } \
-	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, CameraBoom); }
+	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, CameraBoom); } \
+	FORCEINLINE static uint32 __PPO__FollowCamera() { return STRUCT_OFFSET(ADonkeyKong_SIS457Character, FollowCamera); }
 
 
 #define DonkeyKong_SIS457_Source_DonkeyKong_SIS457_DonkeyKong_SIS457Character_h_9_PROLOG

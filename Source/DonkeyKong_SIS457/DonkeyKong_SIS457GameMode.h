@@ -5,10 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "DonkeyKong_SIS457GameMode.generated.h"
-
 class AComponentePlataforma;
 class ABarril;
 class APlataformas;
+
 
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
@@ -37,11 +37,13 @@ public:
 
 	TArray<AComponentePlataforma*> componentesPlataforma;
 	TArray<ABarril*> barriles;
+	
 
 
 	//Creamos nuestro TMap
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Plataformas")
 	TMap<int32, APlataformas* > PlataformaMap;
+	
 
 
 public:

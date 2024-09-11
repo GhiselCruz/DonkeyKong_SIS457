@@ -19,6 +19,8 @@ AEscaleras::AEscaleras()
 
 	FVector NewScale(5.8f, 5.8f, 5.8f); // Cambia estos valores según tus necesidades
 	SetActorScale3D(NewScale);
+
+
 }
 
 // Called when the game starts or when spawned

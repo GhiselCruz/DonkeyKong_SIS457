@@ -1,14 +1,28 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "DonkeyKong_SIS457Character.h"
+#include "HeadMountedDisplayFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"    
+#include "Proyectil.h"
+#include "GameFramework/Controller.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Components/InputComponent.h"
+#include "Engine/CollisionProfile.h"
+#include "Engine/StaticMesh.h"
+#include "Kismet/GameplayStatics.h"
+#include "Sound/SoundBase.h"
+
+
 
 ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 {
+	bCanFire = true;
+	FireRate = 0.5f;
+
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
@@ -22,7 +36,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	CameraBoom->SetupAttachment(RootComponent);
 	CameraBoom->SetUsingAbsoluteRotation(true); // Rotation of the character should not affect rotation of boom
 	CameraBoom->bDoCollisionTest = false;
-	CameraBoom->TargetArmLength = 500.f;
+	CameraBoom->TargetArmLength = 1000.f;
 	CameraBoom->SocketOffset = FVector(0.f,0.f,75.f);
 	CameraBoom->SetRelativeRotation(FRotator(0.f,180.f,0.f));
 
@@ -46,6 +60,46 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
 
+void ADonkeyKong_SIS457Character::FireShot(FVector FireDirection)
+{
+	// Si es posible disparar
+	if (bCanFire == true)
+	{
+		// Si estamos presionando el stick de disparo en una dirección
+		if (FireDirection.SizeSquared() > 0.0f)
+		{
+			const FRotator FireRotation = FireDirection.Rotation();
+			// Genera el proyectil en un desplazamiento desde esta nave
+			const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
+
+			UWorld* const World = GetWorld();
+			if (World != nullptr)
+			{
+				// Genera el proyectil
+				World->SpawnActor<AProyectil>(SpawnLocation, FireRotation);
+			}
+
+			bCanFire = false;
+			World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &ADonkeyKong_SIS457Character::ShotTimerExpired, FireRate);
+
+			// Intenta reproducir el sonido si está especificado
+			if (FireSound != nullptr)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+			}
+
+			bCanFire = false;
+		}
+	}
+}
+
+void ADonkeyKong_SIS457Character::ShotTimerExpired()
+{
+	bCanFire = true;
+}
+
+
+
 //////////////////////////////////////////////////////////////////////////
 // Input
 
@@ -55,10 +109,20 @@ void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponen
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ADonkeyKong_SIS457Character::MoveRight);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ADonkeyKong_SIS457Character::OnFire);
+	//PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ACharacter::Jump);
 
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &ADonkeyKong_SIS457Character::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &ADonkeyKong_SIS457Character::TouchStopped);
 
+
+}
+
+void ADonkeyKong_SIS457Character::OnFire()
+{
+	// Dispara el proyectil hacia adelante
+	FVector FireDirection = FollowCamera->GetForwardVector(); // Ajusta según la dirección deseada
+	FireShot(FireDirection);
 }
 
 void ADonkeyKong_SIS457Character::MoveRight(float Value)
