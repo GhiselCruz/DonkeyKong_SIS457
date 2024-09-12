@@ -278,8 +278,7 @@
     <None Include="..\..\Source\DonkeyKong_SIS457Editor.Target.cs"/>
     <None Include="..\..\.gitattributes"/>
     <None Include="..\..\.gitignore"/>
-    <None Include="..\..\Source_ExamenLaboratorio01.zip"/>
-    <None Include="..\..\Source_LAB02.zip"/>
+    <None Include="..\..\Source  Trabajo en grupo.zip"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>

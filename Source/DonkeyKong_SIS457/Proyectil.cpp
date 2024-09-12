@@ -14,12 +14,13 @@ AProyectil::AProyectil()
 
     // Carga estática del mesh para el proyectil
   // Utiliza FObjectFinder para buscar y cargar el asset del mesh para el proyectil
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> ProjectileMeshAsset(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Torus.Shape_Torus'"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> 
+    ProjectileMeshAsset(TEXT("StaticMesh'/Game/Meshes/Projectile.Projectile'"));
 
     ProyectilMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ProjectileMesh0"));
     ProyectilMesh->SetStaticMesh(ProjectileMeshAsset.Object);
     ProyectilMesh->SetupAttachment(RootComponent);
-    ProyectilMesh->BodyInstance.SetCollisionProfileName("Projectile");
+    //ProyectilMesh->BodyInstance.SetCollisionProfileName("Projectile");
     ProyectilMesh->OnComponentHit.AddDynamic(this, &AProyectil::OnHit);
     RootComponent = ProyectilMesh;
 
@@ -38,7 +39,7 @@ AProyectil::AProyectil()
     // Establece la duración del proyectil antes de ser destruido automáticamente
     // Después de este tiempo, el proyectil se destruirá
     InitialLifeSpan = 3.0f;
-
+    vel = -1000;
 	
 }
 
@@ -67,9 +68,16 @@ void AProyectil::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	
-
+    Mover(DeltaTime);
 	
 
+}
+
+void AProyectil::Mover(float DeltaTime)
+{
+   // FVector NewLocation = GetActorLocation() + -GetActorForwardVector() * vel * GetWorld()->GetDeltaSeconds();
+    FVector NewLocation = GetActorLocation() + FVector(0.0f, vel, 0.0f) * DeltaTime;
+    SetActorLocation(NewLocation);
 }
 
 

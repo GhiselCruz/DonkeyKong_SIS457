@@ -17,6 +17,7 @@
 #include "Proyectil.h"
 #include "TimerManager.h"
 #include "Engine/World.h"
+#include "Proyectil.h"
 
 
 
@@ -25,6 +26,7 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	// Inicialización del disparo
 	bCanFire = true;
 	FireRate = 0.5f; // Ajusta la tasa de disparo según sea necesario
+	PrimaryActorTick.bCanEverTick = true;
 
 	//GetWorld()->SpawnActor<AProyectil>(AProyectil::StaticClass(), FVector(1200.0f, -900.0f, 250.0f), FRotator::ZeroRotator);
 
@@ -60,9 +62,28 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 	GetCharacterMovement()->MaxWalkSpeed = 900.f;  //valor por defecto 600
 	GetCharacterMovement()->MaxFlySpeed = 600.f;
 
+	cadencia = 1.0f;
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
+}
+
+void ADonkeyKong_SIS457Character::Disparar()
+{
+	FVector ubicacion = GetActorLocation()+FVector(0.0f,0.0f,50.0f);
+	FRotator rotacion = GetActorRotation();
+	AProyectil* NewProj0 = GetWorld()->SpawnActor<AProyectil>(ubicacion, rotacion);
+}
+
+void ADonkeyKong_SIS457Character::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	naveRecord += 1;
+	if (naveRecord >= 50)
+	{
+	//	Disparar();
+		naveRecord = 0;
+	}
 }
 
 
@@ -79,7 +100,7 @@ void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponen
 	// set up gameplay key bindings
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ADonkeyKong_SIS457Character::OnFire);
+	PlayerInputComponent->BindAction("Disparar", IE_Pressed, this, &ADonkeyKong_SIS457Character::Disparar);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ADonkeyKong_SIS457Character::MoveRight);
 	
 	//PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ACharacter::Jump);
