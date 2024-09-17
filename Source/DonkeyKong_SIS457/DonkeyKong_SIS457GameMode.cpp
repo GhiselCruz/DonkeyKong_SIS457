@@ -11,6 +11,7 @@
 #include "Plataformas.h"
 #include "Escaleras.h"
 #include "Proyectil.h"
+#include "Cubo.h"
 
 
 ADonkeyKong_SIS457GameMode::ADonkeyKong_SIS457GameMode()
@@ -58,7 +59,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	GetWorld()->SpawnActor<ARoca>(ARoca::StaticClass(), FVector(1200.0f, -600.0f, 100.0f), FRotator::ZeroRotator);
 
 	//Spawneamos nuestra escalera
-    GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 2250.0f), FRotator(0.0f, 90.0f, 0.0f));
+	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 2250.0f), FRotator(0.0f, 90.0f, 0.0f));
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 2700.0f), FRotator(0.0f, 90.0f, 0.0f));
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 3250.0f), FRotator(0.0f, 90.0f, 0.0f));
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 3700.0f), FRotator(0.0f, 90.0f, 0.0f));
@@ -67,6 +68,22 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, 1360.0f, 5250.0f), FRotator(0.0f, 90.0f, 0.0f));
 	GetWorld()->SpawnActor<AEscaleras>(AEscaleras::StaticClass(), FVector(2000.0f, -415.0f, 5700.0f), FRotator(0.0f, 90.0f, 0.0f));
 
+
+	//SPAWNEAMOS NUESTRO CUBO;
+	FVector posicionInicialC = FVector(1165.0f, -570.0f, 1280.f);                       
+	FTransform SpawnLocationC;
+
+	for (int numPisos = 0; numPisos < 3; numPisos++)                        //NUMERO DE PISOS
+	{
+		SpawnLocationC.SetLocation(FVector(posicionInicialC.X, posicionInicialC.Y, posicionInicialC.Z));
+		cubos.Add(GetWorld()->SpawnActor<ACubo>(ACubo::StaticClass(), SpawnLocationC));
+
+		
+		posicionInicialC.Y -= 40.0f;
+		posicionInicialC.Z += 960.0f;
+	}
+
+	
 
 
 	//Spawneamos nuestro proyectil

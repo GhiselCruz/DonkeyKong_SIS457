@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\DonkeyKong_SIS457.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{3ADFB6DD-0A5D-4FA1-84E0-9BA9E2E31D9E}</UniqueIdentifier>
+      <UniqueIdentifier>{4806415B-8355-4A4E-8D99-41B93E008D8F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\DonkeyKong_SIS457.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\Source  Trabajo en grupo.zip" />
     <Filter Include="Config">
-      <UniqueIdentifier>{36E39653-A64F-4E84-820E-E6EC8D785C5F}</UniqueIdentifier>
+      <UniqueIdentifier>{5F35A311-C0A2-48CB-8952-35E20F89291E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -33,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\DonkeyKong_SIS457">
-      <UniqueIdentifier>{AB537534-A3E5-47D4-97D3-8D1CD3C1BA49}</UniqueIdentifier>
+      <UniqueIdentifier>{CF43457B-3CA4-40A8-B2D9-14B7164A7A0C}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Barril.cpp">
       <Filter>Source\DonkeyKong_SIS457</Filter>
@@ -45,6 +45,12 @@
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\DonkeyKong_SIS457\ComponentePlataforma.h">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DonkeyKong_SIS457\Cubo.cpp">
+      <Filter>Source\DonkeyKong_SIS457</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DonkeyKong_SIS457\Cubo.h">
       <Filter>Source\DonkeyKong_SIS457</Filter>
     </ClInclude>
     <None Include="..\..\Source\DonkeyKong_SIS457\DonkeyKong_SIS457.Build.cs">

@@ -70,19 +70,22 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 
 void ADonkeyKong_SIS457Character::Disparar()
 {
-	FVector ubicacion = GetActorLocation()+FVector(0.0f,0.0f,50.0f);
+	FVector ubicacion = GetActorLocation() + FVector(0.0f, 0.0f, 20.0f);
+	FVector ubicacion1 = GetActorLocation() + FVector(0.0f, 0.0f, 55.0f);
 	FRotator rotacion = GetActorRotation();
-	AProyectil* NewProj0 = GetWorld()->SpawnActor<AProyectil>(ubicacion, rotacion);
+    AProyectil* NewProj0 = GetWorld()->SpawnActor<AProyectil>(ubicacion, rotacion);
+	AProyectil* NewProj1 = GetWorld()->SpawnActor<AProyectil>(ubicacion1, rotacion);
+    
 }
 
 void ADonkeyKong_SIS457Character::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	naveRecord += 1;
-	if (naveRecord >= 50)
+	proyectilRecord += 1;
+	if (proyectilRecord >= 50)
 	{
 	//	Disparar();
-		naveRecord = 0;
+		proyectilRecord = 0;
 	}
 }
 
@@ -110,12 +113,12 @@ void ADonkeyKong_SIS457Character::SetupPlayerInputComponent(class UInputComponen
 
 }
 
-void ADonkeyKong_SIS457Character::OnFire()
+/*void ADonkeyKong_SIS457Character::OnFire()
 {
 	// Dispara el proyectil hacia adelante
 	FVector FireDirection = FollowCamera->GetForwardVector(); // Ajusta según la dirección deseada
 	FireShot(FireDirection);
-}
+}*/
 
 
 void ADonkeyKong_SIS457Character::MoveRight(float Value)
@@ -140,7 +143,7 @@ void ADonkeyKong_SIS457Character::TouchStopped(const ETouchIndex::Type FingerInd
 	StopJumping();
 }
 
-void ADonkeyKong_SIS457Character::FireShot(FVector FireDirection)
+/*void ADonkeyKong_SIS457Character::FireShot(FVector FireDirection)
 {
 	// Si es posible disparar
 	if (bCanFire == true)
@@ -171,9 +174,9 @@ void ADonkeyKong_SIS457Character::FireShot(FVector FireDirection)
 			bCanFire = false;
 		}
 	}
-}
+}*/
 
-void ADonkeyKong_SIS457Character::ShotTimerExpired()
+/*void ADonkeyKong_SIS457Character::ShotTimerExpired()
 {
 	bCanFire = true;
-}
+}*/

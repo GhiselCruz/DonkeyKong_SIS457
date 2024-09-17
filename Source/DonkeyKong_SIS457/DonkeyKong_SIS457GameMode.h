@@ -9,7 +9,7 @@ class AComponentePlataforma;
 class ABarril;
 class APlataformas;
 class AProyectil;
-
+class ACubo;
 UCLASS(minimalapi)
 class ADonkeyKong_SIS457GameMode : public AGameModeBase
 {
@@ -37,8 +37,8 @@ public:
 
 	TArray<AComponentePlataforma*> componentesPlataforma;
 	TArray<ABarril*> barriles;
-	//TArray<AProyectil*> proyectiles;
-	
+	TArray<ACubo*> cubos;
+	int numCubos;
 
 
 	//Creamos nuestro TMap

@@ -43,7 +43,7 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 
-	void OnFire();
+	//void OnFire();
 
 
 public:
@@ -56,7 +56,7 @@ public:
 	virtual void Disparar();
 	virtual void Tick(float DeltaTime) override;
 	float cadencia;
-	int naveRecord;
+	int proyectilRecord;
 	
 
 
@@ -73,10 +73,10 @@ public:
 	UPROPERTY(Category = Audio, EditAnywhere, BlueprintReadWrite)
 	class USoundBase* FireSound;
 	// Dispara un proyectil en la dirección especificada 
-	void FireShot(FVector FireDirection);
+	//void FireShot(FVector FireDirection);
 
 	// Manejador para la expiración del temporizador de disparo 
-	void ShotTimerExpired();
+	//void ShotTimerExpired();
 
 private:
 
