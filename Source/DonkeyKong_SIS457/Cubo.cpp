@@ -33,13 +33,19 @@ void ACubo::BeginPlay()
 }
 
 
-void ACubo::DisparoCuboIzquierda()
+void ACubo::DisparoCubo()
 {
 
 	FVector ubicacionCI = GetActorLocation() + FVector(0.0f, 0.0f, 20.0f);
-	FRotator rotacionCI = GetActorRotation();
+	FRotator rotacionCI = FRotator(0.0f, 90.0f, 0.0f);
 	AProyectil* NewProj0 = GetWorld()->SpawnActor<AProyectil>(ubicacionCI, rotacionCI);
-	
+
+
+	FVector ubicacionCD = GetActorLocation() + FVector(0.0f, 0.0f, 20.0f);
+	FRotator rotacionCD = FRotator(0.0f, -90.0f, 0.0f);
+	AProyectil* NewProj1 = GetWorld()->SpawnActor<AProyectil>(ubicacionCD, rotacionCD);
+
+
 }
 
 
@@ -59,7 +65,7 @@ void ACubo::Tick(float DeltaTime)
 
 	if (tiempo >= 10)
 	{
-		DisparoCuboIzquierda();
+		DisparoCubo();
 		tiempo = 0;
 	}
 		

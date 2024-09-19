@@ -71,10 +71,10 @@ ADonkeyKong_SIS457Character::ADonkeyKong_SIS457Character()
 void ADonkeyKong_SIS457Character::Disparar()
 {
 	FVector ubicacion = GetActorLocation() + FVector(0.0f, 0.0f, 20.0f);
-	FVector ubicacion1 = GetActorLocation() + FVector(0.0f, 0.0f, 55.0f);
+	//FVector ubicacion1 = GetActorLocation() + FVector(0.0f, 0.0f, 55.0f);
 	FRotator rotacion = GetActorRotation();
     AProyectil* NewProj0 = GetWorld()->SpawnActor<AProyectil>(ubicacion, rotacion);
-	AProyectil* NewProj1 = GetWorld()->SpawnActor<AProyectil>(ubicacion1, rotacion);
+	//AProyectil* NewProj1 = GetWorld()->SpawnActor<AProyectil>(ubicacion1, rotacion);
     
 }
 

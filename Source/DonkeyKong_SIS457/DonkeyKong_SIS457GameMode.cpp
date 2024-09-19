@@ -70,7 +70,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 
 
 	//SPAWNEAMOS NUESTRO CUBO;
-	FVector posicionInicialC = FVector(1165.0f, -570.0f, 1280.f);                       
+	/*FVector posicionInicialC = FVector(1165.0f, -570.0f, 1280.f);
 	FTransform SpawnLocationC;
 
 	for (int numPisos = 0; numPisos < 3; numPisos++)                        //NUMERO DE PISOS
@@ -81,53 +81,26 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 		
 		posicionInicialC.Y -= 40.0f;
 		posicionInicialC.Z += 960.0f;
-	}
-
-	
-
-
-	//Spawneamos nuestro proyectil
-	//GetWorld()->SpawnActor<AProyectil>(AProyectil::StaticClass(), FVector(1200.0f, -900.0f, 250.0f), FRotator::ZeroRotator);
-
-
-	//Spawneamos nuestro barril
-	//GetWorld()->SpawnActor<ABarril>(ABarril::StaticClass(), FVector(1670.0f, 1550.0f, 2100.0f), FRotator(0.0f, 90.0f, 90.0f));
-
-
-	//Componente plataforma   
-	//Contenedor TArray
-
-	/*FVector posicionInicial = FVector(1160.0f, -200.0f, 750.f);                        //Codigo del ingeniero
-	FRotator rotacionInicial = FRotator(0.0f, 0.0f, 15);
-	FTransform SpawnLocationCP;
-
-
-
-	for (int npp = 0; npp < 2; npp++)                        //numero de pisos
-	{
-		rotacionInicial.Roll = rotacionInicial.Roll * -1;
-		posicionInicial.Z += 250.0f;
-		posicionInicial.Y += 200.0f;
-
-		SpawnLocationCP.SetRotation(FQuat(rotacionInicial));
-		for (int ncp = 0; ncp < 3; ncp++) {                               //numero de plataformas
-
-			SpawnLocationCP.SetLocation(FVector(posicionInicial.X, posicionInicial.Y, posicionInicial.Z));
-			componentesPlataforma.Add(GetWorld()->SpawnActor<AComponentePlataforma>(AComponentePlataforma::StaticClass(), SpawnLocationCP));
-			posicionInicial.Y += 520.0f;
-			posicionInicial.Z += 140.0f;
-			rotacionInicial.Roll = rotacionInicial.Roll * -1;
-
-		}
-
-		//rotacionInicial.Roll = rotacionInicial.Roll * -1;
-
-		posicionInicial.Z -= 100.0f;
-        posicionInicial.Y -= 140.0f;
 	}*/
 
+	//SPAWNEAMOS CUBOS ALEATORIAMENTE
+	float maximaUbiX = 1200;
+	float minimaUbiX = 1200;
+	float maximaUbiY = -1150;
+	float minimaUbiY = -500;
+	float maximaUbiZ = 3900;
+	float minimaUbiZ = 550;
 
 
+	for (int i = 0; i < 5; i++)
+	{
+		FVector RandomLocation = FVector(
+			FMath::RandRange(minimaUbiX, maximaUbiX),
+			FMath::RandRange(minimaUbiY, maximaUbiY),
+			FMath::RandRange(minimaUbiZ, maximaUbiZ)
+		);
+		cubos.Add(GetWorld()->SpawnActor<ACubo>(RandomLocation, FRotator(0.0f, 0.0f, 0.0f)));
+	}
 
 	                                                                      
 
@@ -220,19 +193,7 @@ void ADonkeyKong_SIS457GameMode::SpawnBarril()
 	
 }
 
-//void ADonkeyKong_SIS457GameMode::SpawnProyectil()
-//{
-//	if (numeroProyectiles < 10) {
-//
-//		// Definir la ubicación y rotación para el nuevo barril
-//		FVector SpawnLocation1 = FVector(1670.0f, -550.0f, 350.0f); // Ajusta según sea necesario
-//		FRotator SpawnRotation1 = FRotator(0.0f, 90.0f, 90.0f);
-//
-//		// Crear el actor barril
-//		proyectiles.Add(GetWorld()->SpawnActor<AProyectil>(AProyectil::StaticClass(), SpawnLocation1, SpawnRotation1));
-//		numeroProyectiles++;
-//	}
-//}
+
 
 void ADonkeyKong_SIS457GameMode::crearPlataforma()
 {
