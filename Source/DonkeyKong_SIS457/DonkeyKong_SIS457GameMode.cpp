@@ -87,7 +87,7 @@ void ADonkeyKong_SIS457GameMode::BeginPlay()
 	float maximaUbiX = 1200;
 	float minimaUbiX = 1200;
 	float maximaUbiY = -1150;
-	float minimaUbiY = -500;
+	float minimaUbiY = -600;
 	float maximaUbiZ = 3900;
 	float minimaUbiZ = 550;
 
@@ -240,6 +240,5 @@ void ADonkeyKong_SIS457GameMode::crearPlataforma()
 			ubicacion2.Z += 700.0f;
 			
 		}
-
 	}
 }

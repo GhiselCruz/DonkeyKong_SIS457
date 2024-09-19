@@ -27,4 +27,22 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	APlataformas* plataforma;
+
+protected:
+	bool derecha;
+	FVector posicionInicial;
+	FVector posicionActual;
+	FVector posicionFinal;
+	float incrementoY;
+
+protected:
+	bool subir;
+	FVector posicionInicialS;
+	FVector posicionActualS;
+	FVector posicionFinalS;
+	float incrementoZ;
+
+
 };

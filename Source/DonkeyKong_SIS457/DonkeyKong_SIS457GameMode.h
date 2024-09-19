@@ -46,7 +46,7 @@ public:
 	TMap<int32, APlataformas* > PlataformaMap;
 	
 
-
+	APlataformas* plataforma;
 public:
 	//called every frame
 	virtual void Tick(float DeltaTime) override;

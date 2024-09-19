@@ -1,3 +1,0 @@
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Development\DonkeyKong_SIS457\Definitions.DonkeyKong_SIS457.h
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Source\DonkeyKong_SIS457\Plataformas.h
-C:\Users\Ghisel Cruz\Documents\Unreal Projects\DonkeyKong_SIS457\Intermediate\Build\Win64\UE4Editor\Inc\DonkeyKong_SIS457\Plataformas.generated.h

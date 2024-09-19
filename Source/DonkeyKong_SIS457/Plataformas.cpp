@@ -26,6 +26,13 @@ APlataformas::APlataformas()
 void APlataformas::BeginPlay()
 {
 	Super::BeginPlay();
+
+	posicionActual = GetActorLocation();
+	posicionInicial = posicionActual;
+	posicionFinal = posicionActual + FVector(0.0f, 500.0f, 0.0f);
+	incrementoY = 1.0f;
+	derecha = false;
+
 	
 }
 
@@ -33,6 +40,31 @@ void APlataformas::BeginPlay()
 void APlataformas::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	for (int i = 0; i < 3; i++)
+	{
+		if (!derecha)
+		{
+			if (posicionActual.Y < posicionFinal.Y)
+			{
+				posicionActual.Y += incrementoY;
+			}
+			else
+			{
+				derecha = true;
+			}
+		}
+		else
+		{
+			if (posicionActual.Y > posicionInicial.Y)
+			{
+				posicionActual.Y -= incrementoY;
+			}
+			else {
+				derecha = false;
+			}
+		}
 
+		SetActorLocation(posicionActual);
+	}
 }
 

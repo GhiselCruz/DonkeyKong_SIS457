@@ -66,5 +66,6 @@ void AEscaleras::Tick(float DeltaTime)
 	}
 
 	SetActorLocation(posicionActual);
+
 }
 

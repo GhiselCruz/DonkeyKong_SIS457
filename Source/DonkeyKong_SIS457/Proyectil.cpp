@@ -39,7 +39,7 @@ AProyectil::AProyectil()
     // Establece la duración del proyectil antes de ser destruido automáticamente
     // Después de este tiempo, el proyectil se destruirá
     InitialLifeSpan = 3.0f;
-    vel = -1000;    //para que el disparo vaya al lado derecho colocar -1000
+    vel = 1000;    //para que el disparo vaya al lado derecho colocar -1000
     
 }
 
@@ -75,7 +75,7 @@ void AProyectil::Tick(float DeltaTime)
 
 void AProyectil::Mover(float DeltaTime)
 {
-   FVector NewLocation = GetActorLocation() + -GetActorForwardVector() * vel * GetWorld()->GetDeltaSeconds();
+   FVector NewLocation = GetActorLocation() + GetActorForwardVector() * vel * GetWorld()->GetDeltaSeconds();
    //FVector NewLocation = GetActorLocation() + FVector(0.0f, -vel, 0.0f) * DeltaTime;
    SetActorLocation(NewLocation);
    
